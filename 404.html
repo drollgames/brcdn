@@ -1,1 +1,44 @@
-não encontrado
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>BrCdn</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Sistema de upload gratuito, coloque sua imagens no ar de forma privada">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <style>
+    .thumb {
+        height: 75px;
+        border: 1px solid #000;
+        margin: 10px 5px 0 0;
+    }
+    .home {
+        text-align: center;
+    }
+    body {
+        font-family: sans-serif;
+    }
+</style>
+<script type="text/javascript">
+    $(function () {
+        $(":file").change(function () {
+            if (this.files && this.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = imageIsLoaded;
+                reader.readAsDataURL(this.files[0]);
+            }
+        });
+    });
+
+    function imageIsLoaded(e) {
+        $('#myImg').attr('src', e.target.result);
+        $('#foto').attr('src', e.target.result);
+    };
+
+</script>
+    </head>
+    <body>
+        <p class="home"><center><h1><b>BrCdn</b></h1><p><input type='file' />
+</br><img id="myImg" src="#" alt="foto" height=200 width=100></p><p>Faça upload de fotos sem limites e anúncios</p></center></p>
+    </body>
+</html>
