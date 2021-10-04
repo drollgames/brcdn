@@ -1,0 +1,15 @@
+img {
+                height: 322px;
+                width: 322px;
+            }
+            .home {
+                text-align: center;
+            }
+            body {
+                color: #fff;
+                font-family: arial;
+                font-size: 15px;
+            }
+            a {
+                color: lime;
+            }
